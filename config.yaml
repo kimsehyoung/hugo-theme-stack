@@ -134,7 +134,8 @@ params:
             - type: tag-cloud
               params:
                   limit: 10
-        page: []
+        page:
+            - type: toc
 
     opengraph:
         twitter:
@@ -164,9 +165,39 @@ params:
             enabled: true
 
 menu:
+    main: []
     social:
         - identifier: github
           name: GitHub
           url: https://github.com/kimsehyoung
           params:
               icon: brand-github
+
+related:
+    includeNewer: true
+    threshold: 60
+    toLower: false
+    indices:
+        - name: tags
+          weight: 100
+
+        - name: categories
+          weight: 200
+
+markup:
+    goldmark:
+        renderer:
+            ## Set to true if you have HTML content inside Markdown
+            unsafe: false
+    tableOfContents:
+        endLevel: 4
+        ordered: true
+        startLevel: 2
+    highlight:
+        noClasses: false
+        codeFences: true
+        guessSyntax: true
+        lineNoStart: 1
+        lineNos: true
+        lineNumbersInTable: true
+        tabWidth: 4
