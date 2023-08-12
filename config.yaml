@@ -23,7 +23,7 @@ params:
     favicon:
 
     footer:
-        since:
+        since: 2023
         customText:
 
     dateFormat:
@@ -31,9 +31,8 @@ params:
         lastUpdated: Jan 02, 2006 15:04 MST
 
     sidebar:
-        compact: false
-        emoji:
-        subtitle:
+        emoji: 🥕
+        subtitle: Hello, I'm Sehyoung.
         avatar:
             enabled: true
             local: true
@@ -124,7 +123,17 @@ params:
             id:
 
     widgets:
-        homepage: []
+        homepage:
+            - type: search
+            - type: archives
+              params:
+                  limit: 5
+            - type: categories
+              params:
+                  limit: 10
+            - type: tag-cloud
+              params:
+                  limit: 10
         page: []
 
     opengraph:
