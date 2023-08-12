@@ -1,3 +1,15 @@
+baseurl: https://kimsehyoung.github.io
+languageCode: ko-kr
+theme: hugo-theme-stack
+paginate: 5
+title: Dongle
+
+
+DefaultContentLanguage: ko
+
+# Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]
+hasCJKLanguage: true
+
 module:
     hugoVersion:
         extended: true
@@ -141,3 +153,11 @@ params:
             enabled: true
         content:
             enabled: true
+
+menu:
+    social:
+        - identifier: github
+          name: GitHub
+          url: https://github.com/kimsehyoung
+          params:
+              icon: brand-github
