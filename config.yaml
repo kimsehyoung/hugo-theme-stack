@@ -4,9 +4,10 @@ theme: hugo-theme-stack
 paginate: 5
 title: Dongle
 
+#
 
+# Available values: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
 DefaultContentLanguage: ko
-
 # Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]
 hasCJKLanguage: true
 
@@ -152,7 +153,7 @@ params:
         toggle: true
 
         # Available values: auto, light, dark
-        default: auto
+        default: light
 
     imageProcessing:
         cover:

@@ -1,15 +1,24 @@
 {{- $context := .Context -}}
 {{- $limit := default 10 .Params.limit -}}
+
+{{- $style := resources.Get "scss/partials/widget/categories.scss" | resources.ToCSS | minify -}}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+
 <section class="widget tagCloud">
-    <div class="widget-icon">
+    <!-- <div class="widget-icon">
         {{ partial "helper/icon" "categories" }}
     </div>
-    <h2 class="widget-title section-title">{{ T "widget.categoriesCloud.title" }}</h2>
+    <h2 class="widget-title section-title">{{ T "widget.categoriesCloud.title" }}</h2> -->
+    <h2 class="widget-title section-title">
+        {{ partial "helper/icon" "categories" }}
+        {{ T "widget.categoriesCloud.title" }}
+    </h2>
 
     <div class="tagCloud-tags">
         {{ range first $limit $context.Site.Taxonomies.categories.ByCount }}
             <a href="{{ .Page.RelPermalink }}" class="font_size_{{ .Count }}">
-                {{ .Page.Title }}
+                {{ .Page.Title }}<span class="count-style">{{ .Count }}</span>
             </a>
         {{ end }}
     </div>
